@@ -4,7 +4,8 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 import AccountMenu from './AccountMenu';
-import BasicForm from './BasicForm'
+import BasicForm from './BasicForm';
+import Todos from './components/Todos';
 
 export default function App() {
 	const [openForm, setOpenForm] = React.useState(false);
@@ -19,12 +20,24 @@ export default function App() {
 	return (
 		<Container maxWidth="sm">
 			<AccountMenu onClick={handleOnClick} />
-			{openForm && <BasicForm />}
-			<Box sx={{ my: 4 }}>
-				<Typography variant="h4" component="h1" gutterBottom>
-					React Skills test
-				</Typography>
-			</Box>
+			{!openForm &&
+				<Box sx={{ my: 4 }}>
+					<Typography variant="h4" component="h1" gutterBottom>
+						React Skills test
+					</Typography>
+				</Box>
+			}
+			{openForm &&
+				<>
+					<BasicForm />
+					<Box sx={{ my: 4 }}>
+						<Typography variant="h4" component="h1" gutterBottom>
+							Todos list
+						</Typography>
+						<Todos />
+					</Box>
+				</>
+			}
 		</Container>
 	);
 }
