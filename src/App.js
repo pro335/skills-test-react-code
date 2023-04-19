@@ -3,8 +3,8 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
-import AccountMenu from './AccountMenu';
-import BasicForm from './BasicForm';
+import AccountMenu from './components/AccountMenu';
+import BasicForm from './components/BasicForm';
 import Todos from './components/Todos';
 
 export default function App() {
